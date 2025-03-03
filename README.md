@@ -15,7 +15,7 @@ Bem-vindo ao repositório da **Nossa Familia Açai**, um projeto desenvolvido pa
 
 ```bash
   git clone https://github.com/seu-usuario/acaiteria.git
-  cd acaiteria
+  cd meu-projeto
 ```
 
 ### 2. Instale as dependências
