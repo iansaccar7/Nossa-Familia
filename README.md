@@ -14,7 +14,8 @@ Bem-vindo ao repositório da **Nossa Familia Açai**, um projeto desenvolvido pa
 ### 1. Clone o repositório
 
 ```bash
-  git clone https://github.com/seu-usuario/acaiteria.git
+  [git clone https://github.com/seu-usuario7/Nossa-Familia.git
+  cd Nossa-Familia
   cd meu-projeto
 ```
 
