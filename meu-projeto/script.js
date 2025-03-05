@@ -151,6 +151,7 @@ function showOrderModal(productName) {
   if (!modalContainer) {
     modalContainer = document.createElement('div');
     modalContainer.id = 'order-modal-container';
+    modalContainer.className = 'modal-overlay';
     document.body.appendChild(modalContainer);
   }
 
@@ -231,8 +232,10 @@ function showOrderModal(productName) {
 function closeOrderModal() {
   const modalContainer = document.getElementById('order-modal-container');
   if (modalContainer) {
-    document.body.classList.remove('modal-open');
-    modalContainer.innerHTML = '';
+    modalContainer.remove();
+    if (!document.querySelector('.modal-overlay')) {
+      document.body.classList.remove('modal-open');
+    }
   }
 }
 
@@ -430,6 +433,7 @@ function showCartModal() {
   if (!modalContainer) {
     modalContainer = document.createElement('div');
     modalContainer.id = 'cart-modal-container';
+    modalContainer.className = 'modal-overlay';
     document.body.appendChild(modalContainer);
   }
 
@@ -524,8 +528,10 @@ function showCartModal() {
 function closeCartModal() {
   const modalContainer = document.getElementById('cart-modal-container');
   if (modalContainer) {
-    document.body.classList.remove('modal-open');
-    modalContainer.innerHTML = '';
+    modalContainer.remove();
+    if (!document.querySelector('.modal-overlay')) {
+      document.body.classList.remove('modal-open');
+    }
   }
 }
 
@@ -547,6 +553,7 @@ function showCheckoutModal() {
   if (!modalContainer) {
     modalContainer = document.createElement('div');
     modalContainer.id = 'checkout-modal-container';
+    modalContainer.className = 'modal-overlay';
     document.body.appendChild(modalContainer);
   }
 
@@ -714,8 +721,10 @@ function showCheckoutModal() {
 function closeCheckoutModal() {
   const modalContainer = document.getElementById('checkout-modal-container');
   if (modalContainer) {
-    document.body.classList.remove('modal-open');
-    modalContainer.innerHTML = '';
+    modalContainer.remove();
+    if (!document.querySelector('.modal-overlay')) {
+      document.body.classList.remove('modal-open');
+    }
   }
 }
 
@@ -837,6 +846,7 @@ function showOrderConfirmation() {
   if (!modalContainer) {
     modalContainer = document.createElement('div');
     modalContainer.id = 'confirmation-modal-container';
+    modalContainer.className = 'modal-overlay';
     document.body.appendChild(modalContainer);
   }
 
@@ -878,8 +888,10 @@ function showOrderConfirmation() {
 function closeConfirmationModal() {
   const modalContainer = document.getElementById('confirmation-modal-container');
   if (modalContainer) {
-    document.body.classList.remove('modal-open');
-    modalContainer.innerHTML = '';
+    modalContainer.remove();
+    if (!document.querySelector('.modal-overlay')) {
+      document.body.classList.remove('modal-open');
+    }
   }
 }
 

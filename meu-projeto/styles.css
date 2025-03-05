@@ -259,7 +259,7 @@ body.modal-open {
   overflow: hidden;
 }
 
-#order-modal-container {
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -269,8 +269,24 @@ body.modal-open {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 1000;
   padding: 20px;
+}
+
+#order-modal-container {
+  z-index: 1001;
+}
+
+#cart-modal-container {
+  z-index: 1002;
+}
+
+#checkout-modal-container {
+  z-index: 1003;
+}
+
+#confirmation-modal-container {
+  z-index: 1004;
 }
 
 .order-modal {
@@ -532,20 +548,6 @@ body.modal-open {
 }
 
 /* Cart Modal */
-#cart-modal-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  padding: 20px;
-}
-
 .cart-modal {
   background-color: white;
   border-radius: 0.5rem;
@@ -668,20 +670,6 @@ body.modal-open {
 }
 
 /* Checkout Modal */
-#checkout-modal-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  padding: 20px;
-}
-
 .checkout-modal {
   background-color: white;
   border-radius: 0.5rem;
@@ -854,20 +842,6 @@ body.modal-open {
 }
 
 /* Order Confirmation Modal */
-#confirmation-modal-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  padding: 20px;
-}
-
 .confirmation-modal {
   background-color: white;
   border-radius: 0.5rem;

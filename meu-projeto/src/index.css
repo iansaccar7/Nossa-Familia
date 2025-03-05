@@ -1,13 +1,9 @@
 /* Custom styles */
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
 .hero-gradient {
   background: linear-gradient(135deg, #9333ea 0%, #4f46e5 100%);
   position: relative;
   color: white;
-  padding: 5rem 0;
+  padding: 8rem 0 5rem;
 }
 
 .hero-gradient::before {
@@ -26,89 +22,63 @@ body {
   z-index: 1;
 }
 
-.features-section {
-  background-color: #f5f3ff;
-  padding: 5rem 0;
+.text-purple {
+  color: #4c1d95;
 }
 
-.feature-card {
-  background: white;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  height: 100%;
+.btn-primary {
+  background-color: #6d28d9 !important;
+  border-color: #6d28d9 !important;
 }
 
-.feature-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.btn-primary:hover {
+  background-color: #5b21b6 !important;
+  border-color: #5b21b6 !important;
 }
 
-.menu-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 0.5rem;
-  padding: 2rem;
-  height: 100%;
+.navbar {
+  z-index: 1000;
 }
 
-.menu-price {
-  font-size: 1.875rem;
-  font-weight: bold;
-  color: #6d28d9;
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.25rem;
 }
 
-.menu-ingredients {
-  color: #666;
+.nav-link {
+  font-weight: 500;
 }
 
-.footer-section {
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.footer-purple {
   background-color: #4c1d95;
   color: white;
   padding: 3rem 0;
 }
 
-.footer-section a {
-  color: white;
+.footer-link {
+  color: #e9d5ff;
   text-decoration: none;
+  transition: color 0.2s;
 }
 
-.footer-section a:hover {
-  color: #ddd6fe;
+.footer-link:hover {
+  color: white;
 }
 
 .footer-copyright {
-  border-top: 1px solid #5b21b6;
+  border-top: 1px solid #6d28d9;
   margin-top: 3rem;
   padding-top: 2rem;
+  text-align: center;
   color: #c4b5fd;
-}
-
-.primary-button {
-  background-color: white;
-  color: #6d28d9;
-  border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  transition: all 0.3s;
-}
-
-.primary-button:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-.order-button {
-  background-color: #6d28d9;
-  color: white;
-  border: none;
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  transition: all 0.3s;
-}
-
-.order-button:hover {
-  background-color: #5b21b6;
 }
