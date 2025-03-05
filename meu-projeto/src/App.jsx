@@ -2,37 +2,41 @@ import { FiArrowRight, FiCheck } from 'react-icons/fi';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-vh-100 bg-white">
       {/* Hero Section */}
       <div className="hero-gradient">
-        <div className="container mx-auto px-4 py-20">
-          <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="text-5xl font-bold mb-6">
-              O melhor açaí da cidade
-            </h1>
-            <p className="text-xl mb-8">
-              Sabor incomparável com ingredientes frescos e de qualidade
-            </p>
-            <button className="bg-white text-purple-800 px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-all flex items-center mx-auto">
-              Fazer pedido
-              <FiArrowRight className="ml-2" />
-            </button>
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-8 text-center hero-content">
+              <h1 className="display-4 fw-bold mb-4">
+                O melhor açaí da cidade
+              </h1>
+              <p className="fs-4 mb-4">
+                Sabor incomparável com ingredientes frescos e de qualidade
+              </p>
+              <button className="primary-button">
+                Fazer pedido
+                <FiArrowRight className="ms-2" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Features Section */}
-      <div className="py-20 bg-purple-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-purple-900">
+      <div className="features-section">
+        <div className="container">
+          <h2 className="text-center display-5 fw-bold mb-5 text-purple">
             Por que escolher nosso açaí?
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="row g-4">
             {features.map((feature, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-2 text-purple-900">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+              <div key={index} className="col-md-4">
+                <div className="feature-card">
+                  <div className="feature-icon">{feature.icon}</div>
+                  <h3 className="h4 mb-3">{feature.title}</h3>
+                  <p className="text-muted">{feature.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -40,29 +44,31 @@ function App() {
       </div>
 
       {/* Menu Section */}
-      <div className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-purple-900">
+      <div className="py-5">
+        <div className="container">
+          <h2 className="text-center display-5 fw-bold mb-5">
             Nossas Opções
           </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="row g-4 justify-content-center">
             {menuItems.map((item, index) => (
-              <div key={index} className="border border-purple-100 rounded-lg p-8">
-                <h3 className="text-xl font-semibold mb-4 text-purple-900">{item.name}</h3>
-                <div className="text-3xl font-bold mb-6 text-purple-800">
-                  R$ {item.price}<span className="text-base font-normal text-gray-600"></span>
+              <div key={index} className="col-md-4">
+                <div className="menu-card">
+                  <h3 className="h4 mb-3">{item.name}</h3>
+                  <div className="menu-price mb-4">
+                    R$ {item.price}
+                  </div>
+                  <ul className="list-unstyled mb-4">
+                    {item.ingredients.map((ingredient, i) => (
+                      <li key={i} className="d-flex align-items-center mb-2">
+                        <FiCheck className="text-success me-2" />
+                        <span className="menu-ingredients">{ingredient}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <button className="order-button">
+                    Pedir agora
+                  </button>
                 </div>
-                <ul className="space-y-3 mb-8">
-                  {item.ingredients.map((ingredient, i) => (
-                    <li key={i} className="flex items-center text-gray-600">
-                      <FiCheck className="text-purple-500 mr-2" />
-                      {ingredient}
-                    </li>
-                  ))}
-                </ul>
-                <button className="w-full py-2 rounded-lg font-semibold bg-purple-700 text-white hover:bg-purple-500">
-                  Pedir agora
-                </button>
               </div>
             ))}
           </div>
@@ -70,43 +76,43 @@ function App() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-purple-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h4 className="font-bold text-lg mb-4">Sobre nós</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-purple-200">Nossa história</a></li>
-                <li><a href="#" className="hover:text-purple-200">Localização</a></li>
-                <li><a href="#" className="hover:text-purple-200">Blog</a></li>
+      <footer className="footer-section">
+        <div className="container">
+          <div className="row g-4">
+            <div className="col-md-3">
+              <h4 className="h5 mb-3">Sobre nós</h4>
+              <ul className="list-unstyled">
+                <li className="mb-2"><a href="#">Nossa história</a></li>
+                <li className="mb-2"><a href="#">Localização</a></li>
+                <li className="mb-2"><a href="#">Blog</a></li>
               </ul>
             </div>
-            <div>
-              <h4 className="font-bold text-lg mb-4">Cardápio</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-purple-200">Bowls</a></li>
-                <li><a href="#" className="hover:text-purple-200">Complementos</a></li>
-                <li><a href="#" className="hover:text-purple-200">Bebidas</a></li>
+            <div className="col-md-3">
+              <h4 className="h5 mb-3">Cardápio</h4>
+              <ul className="list-unstyled">
+                <li className="mb-2"><a href="#">Bowls</a></li>
+                <li className="mb-2"><a href="#">Complementos</a></li>
+                <li className="mb-2"><a href="#">Bebidas</a></li>
               </ul>
             </div>
-            <div>
-              <h4 className="font-bold text-lg mb-4">Atendimento</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-purple-200">Delivery</a></li>
-                <li><a href="#" className="hover:text-purple-200">Contato</a></li>
-                <li><a href="#" className="hover:text-purple-200">Horários</a></li>
+            <div className="col-md-3">
+              <h4 className="h5 mb-3">Atendimento</h4>
+              <ul className="list-unstyled">
+                <li className="mb-2"><a href="#">Delivery</a></li>
+                <li className="mb-2"><a href="#">Contato</a></li>
+                <li className="mb-2"><a href="#">Horários</a></li>
               </ul>
             </div>
-            <div>
-              <h4 className="font-bold text-lg mb-4">Redes Sociais</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-purple-200">Instagram</a></li>
-                <li><a href="#" className="hover:text-purple-200">Facebook</a></li>
-                <li><a href="#" className="hover:text-purple-200">WhatsApp</a></li>
+            <div className="col-md-3">
+              <h4 className="h5 mb-3">Redes Sociais</h4>
+              <ul className="list-unstyled">
+                <li className="mb-2"><a href="#">Instagram</a></li>
+                <li className="mb-2"><a href="#">Facebook</a></li>
+                <li className="mb-2"><a href="#">WhatsApp</a></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-purple-800 mt-12 pt-8 text-center text-purple-200">
+          <div className="footer-copyright text-center">
             © 2024 Nossa Família Açai. Todos os direitos reservados.
           </div>
         </div>
@@ -181,7 +187,7 @@ const menuItems = [
       "1KG de açaí ou cupuaçu",
       "4 acompanhamentos"
     ]
-  },
+  }
 ];
 
 export default App;
