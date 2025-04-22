@@ -6,7 +6,7 @@ Bem-vindo ao repositório da **Nossa Familia Açai**, um projeto desenvolvido pa
 
 - [React](https://react.dev/)
 - [Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
+- [BootStrap](https://getbootstrap.com/)
 - [React Icons](https://react-icons.github.io/react-icons/)
 
 ## 📦 Instalação e Configuração
