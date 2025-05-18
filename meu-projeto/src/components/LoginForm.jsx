@@ -1,23 +1,20 @@
 import { useState } from "react";
-import { signIn } from "../lib/supabase";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { setUser } = useAuth();
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const { error } = await signIn(email, password);
-
-    if (error) {
-      toast.error("Erro ao fazer login");
-    } else {
-      toast.success("Login realizado com sucesso");
-      navigate("/");
-    }
+    // You can implement your own login logic here
+    setUser({ email }); // Temporary mock login
+    toast.success("Login realizado com sucesso");
+    navigate("/");
   }
 
   return (

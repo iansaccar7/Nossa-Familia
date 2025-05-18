@@ -1,6 +1,6 @@
 /* Custom styles */
 .hero-gradient {
-  background: linear-gradient(135deg, #9333ea 0%, #4f46e5 100%);
+  background: linear-gradient(135deg, #9333ea 0%, #4c1d95 100%);
   position: relative;
   color: white;
   padding: 8rem 0 5rem;
@@ -38,15 +38,29 @@
 
 .navbar {
   z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.25rem;
 }
 
 .nav-link {
   font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+.navbar-toggler {
+  padding: 0.5rem;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 .card {
@@ -81,4 +95,14 @@
   padding-top: 2rem;
   text-align: center;
   color: #c4b5fd;
+}
+
+/* Responsive styles */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: #4c1d95;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+  }
 }

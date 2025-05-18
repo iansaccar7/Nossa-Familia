@@ -1,23 +1,17 @@
-import { useState } from 'react';
-import { signUp } from '../lib/supabase';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function RegisterForm() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const { error } = await signUp(email, password);
-    
-    if (error) {
-      toast.error('Erro ao criar conta');
-    } else {
-      toast.success('Conta criada com sucesso');
-      navigate('/login');
-    }
+    // You can implement your own registration logic here
+    toast.success("Conta criada com sucesso");
+    navigate("/login");
   }
 
   return (
@@ -29,7 +23,9 @@ export default function RegisterForm() {
               <h2 className="card-title text-center mb-4">Criar Conta</h2>
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                  <label htmlFor="email" className="form-label">Email</label>
+                  <label htmlFor="email" className="form-label">
+                    Email
+                  </label>
                   <input
                     type="email"
                     className="form-control"
@@ -40,7 +36,9 @@ export default function RegisterForm() {
                   />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="password" className="form-label">Senha</label>
+                  <label htmlFor="password" className="form-label">
+                    Senha
+                  </label>
                   <input
                     type="password"
                     className="form-control"
